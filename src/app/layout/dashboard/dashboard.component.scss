@@ -1,0 +1,116 @@
+.main-container {
+    margin-top: 1px;
+    margin: 1px;
+    padding: 1px;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    overflow: hidden;
+}
+
+#mybutton {
+    margin-top:50px;
+    text-align: center;
+    bottom: 3px;
+}
+
+.full-width {
+    width: 100% !important;
+    height: 50px;
+}
+
+.request-card{
+    background-color: #E0E0E0;
+    margin:0px;
+}
+
+.request-card p{
+    padding:8px;
+}
+
+.resolve-card{
+    margin-top:5px;
+    margin-left:100px;
+    background-color: #B9F6CA;
+}
+
+.tab-content {
+    padding: 16px;
+}
+
+.tab-group {
+    border: 1px solid #e8e8e8;
+}
+  
+.tab-icon {
+    color: #0091EA;
+}
+
+.mat-card-avatar{
+    width: 70px;
+    height:70px;
+}
+
+.button-logout{
+    color:#7f0000;
+}
+
+.tab-footer button{
+    background-color: #757575;
+    color:white;
+    letter-spacing: 1px;
+}
+
+.tab-footer button:hover{
+    background-color: #102027;
+}
+
+.tab-footer button:active{
+    background-color: #102027;
+    box-shadow: 0 5px #666;
+    /*transform: translateY(2px);*/
+}
+
+.button-request{
+    background-color:#3e2723;
+}
+
+.toolbar-color{
+    background-color: #ffffff;
+    color:#003c8f;
+}
+
+.flex-space {
+    /* This fills the remaining space, by using flexbox. 
+    Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+#main-card mat-toolbar{
+    height: 40px;
+}
+
+.mat-card-title .mat-card-subtitle{
+    padding-left:50px!important;
+    padding-top:20px!important;
+}
+
+.toolbar-color2{
+    background-color: #005cb2;
+    color:#ffffff;
+}
+
+.btn-bottom{
+    margin-bottom: 5px;
+}
+
+mat-dialog-actions{
+    display: block!important;
+    align-content: center;
+}
+
+.status-label{
+    color:#E65100;
+    margin-left:20px;
+}

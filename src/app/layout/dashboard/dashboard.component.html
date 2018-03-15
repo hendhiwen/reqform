@@ -1,0 +1,104 @@
+<mat-toolbar class="toolbar-color">
+  <img src="./assets/img/mit-icon.png" alt="Mon-IT" width="50px">
+  <span style="margin-left:10px;">IT Support</span>
+  <!-- This fills the remaining space of the current row -->
+  <span class="flex-space"></span>
+</mat-toolbar>
+<mat-card class="main-container">
+    <mat-card-content id="main-card">
+        <mat-tab-group class="tab-group">
+            <mat-tab label="Home" >
+              <ng-template mat-tab-label >
+                <mat-icon matTooltip="My Requests" color="primary" >assignment</mat-icon>
+              </ng-template>
+              <!--nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <a class="navbar-brand" href="#">My Requests</a>
+                  <div class="collapse navbar-collapse">
+                      <ul class="navbar-nav mr-auto">
+                          
+                      </ul>
+                      <form class="form-inline my-2 my-lg-0 hide">
+                          <a class="btn-xs" href="javascript:;" matTooltip=""><mat-icon class="success">comment</mat-icon></a>
+                      </form>
+                  </div>
+              </nav -->
+              <div>
+                  <mat-toolbar class="toolbar-color2">My Requests</mat-toolbar>
+              </div>
+              <div layout-fill class="tab-content" *ngIf="listRequest != null">
+                  <!-- BEGIN main-container -->
+                  <div class="main-container" *ngFor="let req of listRequest">
+                    <mat-card class="request-card">
+                      <mat-card-header style="margin-left:0px!important;">
+                        <mat-card-title>{{req?.subject}}</mat-card-title>
+                        <mat-card-subtitle><small>{{req?.reqDate}}</small></mat-card-subtitle>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          {{req?.desc}}
+                        </p>
+                      </mat-card-content>
+                      <mat-card-actions [hidden]="!hideResolution(req)">
+                          <span class="status-label">(sedang dalam antrian)</span>
+                          <span class="flex-space"></span>   
+                          <a href="javascript:;" matTooltip="Delete / Hapus Request" (click)="deleteRequest(req?.requestId)" style="float:right;"><mat-icon class="tc-red-soft">delete</mat-icon></a>
+                      </mat-card-actions>
+                    </mat-card>
+                    <mat-expansion-panel class="resolve-card" [hidden]="hideResolution(req)">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon>check</mat-icon>            
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            <small>Resolved on {{req?.completedOn}}</small>
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <mat-card >
+                          <mat-card-header>
+                            <mat-card-subtitle></mat-card-subtitle>
+                          </mat-card-header>
+                          <mat-card-content>
+                            <p>
+                                {{req?.actionNote}}
+                            </p>
+                            <!--p><small>MonIT Support</small></p -->
+                          </mat-card-content>
+                        </mat-card>      
+                    </mat-expansion-panel>
+                  </div>
+                  <!-- END main-container -->
+              </div>
+              <div layout-fill class="tab-footer">
+                  <button  matTooltip="Buat Request Baru" mat-raised-button class="text-upper full-width" (click)="newRequest()">NEW REQUEST</button>
+              </div>
+            </mat-tab>
+            <mat-tab label="Account">
+                <ng-template mat-tab-label>
+                  <mat-icon color="primary" matTooltip="Account">account_box</mat-icon>
+                </ng-template>
+                <div layout-fill class="tab-content">
+                    <mat-card class="profile-card">
+                        <mat-card-header>
+                            <img mat-card-avatar src="{{myProfile?.photo}}" alt="{{myProfile?.fullName}}">
+                            <mat-card-title>{{myProfile?.fullName}}</mat-card-title>
+                            <mat-card-subtitle>{{myProfile?.dept}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                          <p>
+                            
+                          </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button class="button-logout full-width" matTooltip="Keluar" (click)="signOut()"><strong>Log Out</strong></button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+            </mat-tab>    
+        </mat-tab-group>        
+    </mat-card-content>
+</mat-card>      
+
+
+
+
+
